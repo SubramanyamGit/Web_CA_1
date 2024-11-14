@@ -1,0 +1,88 @@
+
+  /* Banner Section Styling */
+  .banner {
+    padding: 3rem 0;
+    text-align: center;
+  }
+  .banner h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #222324;
+  }
+  .banner p {
+    font-size: 1.2rem;
+    color: #222324;
+  }
+
+  /* Section Titles */
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color:#222324;
+    margin-bottom: 30px;
+  }
+
+  /* Introduction Section */
+  .introduction p {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Mission & Values Cards */
+  .mission-values .card {
+    background-color: white;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 25px;
+    border-radius: 8px;
+  }
+  .mission-values .card:hover {
+    transform: scale(1.05);
+  }
+  .mission-values .card h4 {
+    color:#222324;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  .mission-values .card p {
+    color: #6c757d;
+    font-size: 1rem;
+  }
+
+  /* Team Section */
+  .team img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 5px solid  #434445;
+    transition: transform 0.3s ease;
+  }
+  .team img:hover {
+    transform: scale(1.1);
+  }
+  .team h5 {
+    font-weight: bold;
+    color:#222324;
+  }
+  .team p.text-muted {
+    color: #6c757d;
+  }
+  .team .member-bio {
+    color:  #333;
+  }
+
+
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .banner h1 {
+      font-size: 2.5rem;
+    }
+    .team img {
+      width: 150px;
+      height: 150px;
+    }
+  }
