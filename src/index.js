@@ -80,7 +80,6 @@ filterForm.addEventListener('submit', async function (e) {
 function displayProperties(properties) {
   const propertyList = document.getElementById("property-list");
   propertyList.innerHTML = ''; // Clear existing properties
-  console.log("property:::::",properties)
   if(properties.length >0){
     properties.forEach((property) => {
       const propertyItem = document.createElement("div");
@@ -111,10 +110,8 @@ function displayProperties(properties) {
       `;
       propertyList.appendChild(propertyItem);
     });
-    console.log("hello")
   }else{
     const notFoundContainer = document.createElement("div");
-    console.log("not found")
     notFoundContainer.innerHTML =`
     <div class="alert fw-bold  text-center mt-4" role="alert">
         <h1 class="mb-0">Property Not Found</h1>
