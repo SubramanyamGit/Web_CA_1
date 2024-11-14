@@ -97,7 +97,7 @@ if (propertyId) {
         style="height: 500px" 
         src="https://www.youtube.com/embed/dcyDtVRFVq0" 
         allowfullscreen
-        title="Sample Video"
+        title="Property Video"
     ></iframe>
 </div>
               </div>
