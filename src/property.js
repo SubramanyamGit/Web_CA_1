@@ -93,7 +93,8 @@ if (propertyId) {
               <div id="videos-section" class="tab-section  border rounded p-4 shadow" style="display: none;">
                 <div class="embed-responsive embed-responsive-16by9 mt-3">
     <iframe 
-        class="embed-responsive-item " 
+        class="embed-responsive-item container"
+        style="height: 500px" 
         src="https://www.youtube.com/embed/dcyDtVRFVq0" 
         allowfullscreen
         title="Sample Video"
