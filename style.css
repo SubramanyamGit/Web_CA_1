@@ -10,11 +10,15 @@ nav ul {
   list-style-type: none;
   display: flex;
   gap: 10px;
+
 }
 
 .banner {
-  text-align: center;
-  padding: 50px;
+  /* text-align: center; */
+  padding: 70px;
+  padding-left: 110px;
+  background-image: url('./assets/banner.jpg');
+  background-size: cover;
 }
 
 /* Property List */
@@ -24,13 +28,14 @@ nav ul {
   gap: 20px; /* Added gap between items */
 }
 
+/* This class for the property item */
 .property-item {
   width: 18rem !important;
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; 
 
 }
 .property-item:hover {
