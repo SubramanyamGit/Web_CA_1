@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 async function fetchProperties(selectedHouseType = null, selectedPriceRange = null) {
   try {
-    const response = await fetch("properties.json");
+    const response = await fetch('../properties.json');
     const properties = await response.json();
 
     // If no filters are selected, return all properties
@@ -80,34 +80,52 @@ filterForm.addEventListener('submit', async function (e) {
 function displayProperties(properties) {
   const propertyList = document.getElementById("property-list");
   propertyList.innerHTML = ''; // Clear existing properties
-
-  properties.forEach((property) => {
-    const propertyItem = document.createElement("div");
-    propertyItem.classList.add("card", "property-item", "shadow", "rounded");
-
-    propertyItem.innerHTML = `
-      <div onclick="window.location='property.html?id=${property.id}'">
-        <img src="${property.featuredImage}" class="card-img" alt="property_image">
-        <div class="card-body">
-          <h5 class="card-title mb-3">${property.name}</h5>
-          <div class="d-flex align-items-center mb-2">
-              <p class="card-text mb-0 me-2"><strong>Price:</strong> ${property.price}</p>
-              <span class="badge bg-secondary text-white p-2">${property.category}</span>
-          </div>
-          <p class="mb-0 d-flex align-items-center card-text mb-2">
-              <i class="fa fa-home me-1"></i> ${property.type}
-          </p>
-          <div class="d-flex align-items-center gap-3 flex-wrap">
-              <p class="mb-0 d-flex align-items-center">
-                  <i class="fa fa-bed me-1"></i> ${property.bedrooms} beds
-              </p>
-              <p class="mb-0 d-flex align-items-center">
-                  <i class="fas fa-bath me-1"></i> ${property.bathrooms} baths
-              </p>
+  console.log("property:::::",properties)
+  if(properties.length >0){
+    properties.forEach((property) => {
+      const propertyItem = document.createElement("div");
+      propertyItem.classList.add("card", "property-item", "shadow", "rounded");
+  
+      propertyItem.innerHTML = `
+        <div onclick="window.location='property.html?id=${property.id}'">
+          <img src="${property.featuredImage}" class="card-img" alt="property_image">
+          <div class="card-body">
+            <h5 class="card-title mb-3">${property.name}</h5>
+            <div class="d-flex align-items-center mb-2">
+                <p class="card-text mb-0 me-2"><strong>Price:</strong> ${property.price}</p>
+                <span class="badge bg-secondary text-white p-2">${property.category}</span>
+            </div>
+            <p class="mb-0 d-flex align-items-center card-text mb-2">
+                <i class="fa fa-home me-1"></i> ${property.type}
+            </p>
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+                <p class="mb-0 d-flex align-items-center">
+                    <i class="fa fa-bed me-1"></i> ${property.bedrooms} beds
+                </p>
+                <p class="mb-0 d-flex align-items-center">
+                    <i class="fas fa-bath me-1"></i> ${property.bathrooms} baths
+                </p>
+            </div>
           </div>
         </div>
-      </div>
-    `;
-    propertyList.appendChild(propertyItem);
-  });
+      `;
+      propertyList.appendChild(propertyItem);
+    });
+    console.log("hello")
+  }else{
+    const notFoundContainer = document.createElement("div");
+    console.log("not found")
+    notFoundContainer.innerHTML =`
+    <div class="alert fw-bold  text-center mt-4" role="alert">
+        <h1 class="mb-0">Property Not Found</h1>
+    </div>
+`
+    propertyList.appendChild(notFoundContainer);
+  }
+ 
+  
+
+
+
+ 
 }

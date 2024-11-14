@@ -3,7 +3,7 @@ const params = new URLSearchParams(window.location.search);
 const propertyId = params.get("id");
 
 if (propertyId) {
-  fetch("properties.json")
+  fetch('../properties.json')
     .then((response) => response.json())
     .then((properties) => {
       const property = properties.find((p) => p.id == propertyId);
